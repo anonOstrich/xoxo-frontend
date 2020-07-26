@@ -4,12 +4,13 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "jest",
     "serve": "serve ./src/"
   },
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "jest": "^26.1.0",
     "serve": "^11.3.2"
   }
 }
