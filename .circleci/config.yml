@@ -2,8 +2,8 @@
 version: 2.1
 # Use a package of configuration called an orb.
 orbs:
-  welcome: circleci/node@2.0.2
+  node: circleci/node@2.0.2
 workflows:
-  run-tests:
+  matrix-tests:
     jobs:
       - node/test
