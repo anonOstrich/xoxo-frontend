@@ -3,15 +3,20 @@
   "version": "0.0.1",
   "description": "",
   "main": "index.js",
+  "type": "module",
   "scripts": {
-    "build": "./build.sh",
+    "tsc": "tsc",
+    "build": "rm -rf src/js && tsc && ./build.sh && rm -rf src/js",
     "test": "jest",
-    "serve": "serve ./src/"
+    "serve": "npm run build && serve ./dist/",
+    "watch": "nodemon"
   },
   "author": "",
   "license": "ISC",
   "devDependencies": {
     "jest": "^26.1.0",
-    "serve": "^11.3.2"
+    "nodemon": "^2.0.4",
+    "serve": "^11.3.2",
+    "typescript": "^3.9.7"
   }
 }
