@@ -1,3 +1,5 @@
+[![anonOstrich](https://circleci.com/gh/anonOstrich/xoxo-frontend.svg?style=svg)](https://app.circleci.com/pipelines/github/anonOstrich/xoxo-frontend)
+
 # XOXO
 
 A tic-tac-toe multiplayer game, with a customizable number of dimensions.
