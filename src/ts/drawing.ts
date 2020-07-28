@@ -1,4 +1,4 @@
-import { isCanvasNode, isButtonNode } from './utils/types.js'
+import { isCanvasNode, isButtonNode } from './utils/types'
 
 const initializeResetButton = (button: HTMLButtonElement, canvas: HTMLCanvasElement) => {
   const ctx = canvas.getContext('2d')
