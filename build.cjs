@@ -22,7 +22,7 @@ const copyFolder = async (src, dst) => {
         const dstPath = path.join(dst, fileName);
 
         const fileStats = await fs.stat(srcPath)
-        if (fileStats.isDirectory()) {
+        if (fileStats.isDirectory() && !srcPath.includes('/ts')) {
             fs.mkdir(dstPath)
             await copyFolder(srcPath, dstPath)
         } else {

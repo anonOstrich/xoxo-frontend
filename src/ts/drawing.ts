@@ -27,16 +27,28 @@ const setCanvasDimensions = () => {
   canvas.height = Number(/\d*/.exec(canvasStyle.height))
 }
 
+let prevX = -1
+let prevY = -1
+
 const drawHandler = (ctx: CanvasRenderingContext2D) =>  (e: MouseEvent) => {
   if(!isDrawing) {
     return
   }
+
   const canvasRect = canvas.getBoundingClientRect()
   const x = Math.round(e.clientX - canvasRect.left)
   const y = Math.round(e.clientY - canvasRect.top)
+  if(prevX < 0) {
+    prevX = x
+    prevY = y
+  }
   ctx.beginPath()
-  ctx.arc(x, y, 1, 0, 2 * Math.PI)
+  ctx.moveTo(prevX, prevY)
+  ctx.lineTo(x, y)
+  // ctx.arc(x, y, 1, 0, 2 * Math.PI)
   ctx.stroke()
+  prevX = x
+  prevY = y
 }
 
 // Assumes a square grid
@@ -83,7 +95,10 @@ const initializeCanvasForDrawing = (canvas: HTMLCanvasElement) => {
   window.addEventListener('resize', setCanvasDimensions)
   canvas.addEventListener('mousemove', drawHandler(ctx))
   window.addEventListener('mousedown', () => isDrawing = true)
-  window.addEventListener('mouseup', () => isDrawing = false)
+  window.addEventListener('mouseup', () => {
+    isDrawing = false
+    prevX = prevY = -1
+  })
 }
 
 
