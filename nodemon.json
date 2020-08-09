@@ -1,0 +1,14 @@
+{
+  "restartable": "rs",
+  "ignore": [
+    "node_modules/**/node_modules",
+    "dist",
+    "src/js"
+  ],
+  "verbose": true,
+  "watch": [
+    "src/"
+  ],
+  "ext": "ts,html,css",
+  "exec": "npm run serve"
+}

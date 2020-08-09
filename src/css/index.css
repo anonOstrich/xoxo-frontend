@@ -1,0 +1,19 @@
+canvas {
+  border: 2px solid black;
+  width: 800px;
+  height: 800px;
+}
+
+@media screen and (max-width: 600px) {
+  canvas {
+    width: 400px;
+    height: 400px;
+  }
+}
+
+@media screen and (max-width: 992px) {
+  canvas {
+    width: 600px;
+    height: 600px;
+  }
+}

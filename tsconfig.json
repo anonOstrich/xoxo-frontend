@@ -1,0 +1,13 @@
+{
+  "compilerOptions": {
+    "target": "es6",
+    "module": "es6",
+    "moduleResolution": "node",
+    "sourceMap": false,
+    "outDir": "./ts-to-js",
+    "lib": ["es5", "es6", "DOM"],
+    "allowJs": true,
+  },
+  "include": ["./src/ts/**/*"],
+  "exclude": ["node_modules"],
+}
